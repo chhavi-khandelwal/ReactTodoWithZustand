@@ -40,10 +40,9 @@ describe('TodoApp', () => {
       render(<TodoPage />);
       expect(screen.queryByText('todo 1')).toBeInTheDocument();
       fireEvent.click(screen.getByTestId('remove-btn'));
-      await waitFor(async () => {
-        await waitFor(() => {
-          expect(screen.queryByText('todo 1')).not.toBeInTheDocument();
-        });
+      await waitFor(() => {
+        expect(screen.queryByText('todo 1')).not.toBeInTheDocument();
+        expect(screen.queryByText('No more todos here')).toBeInTheDocument();
       });
     });
 

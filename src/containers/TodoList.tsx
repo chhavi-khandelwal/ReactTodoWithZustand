@@ -15,16 +15,17 @@ export default function TodoList({ filteredTodos }: Props) {
     <>
       {filteredTodos.map((todo) => (
         <div key={todo.id} className="todo-item group">
-          <div
+          <span
             className={
               'todo-content ' +
               (todo.done ? 'line-through text-gray-400' : 'text-gray-700')
             }
           >
             {todo.content}
-          </div>
+          </span>
 
-          <div
+          <button
+            type="button"
             onClick={() => setStatus(todo.id, !todo.done)}
             data-testid="toggle-done-btn"
             className={
@@ -38,17 +39,21 @@ export default function TodoList({ filteredTodos }: Props) {
                 alt="tick "
               />
             )}
-          </div>
-          <div
+          </button>
+          <button
+            type="button"
             onClick={() => removeTodo(todo.id)}
             data-testid="remove-btn"
             className="todo-remove-btn group-hover:visible md:invisible"
             title="Remove"
           >
             <img src={Cross} width={20} height={20} alt="remove" />
-          </div>
+          </button>
         </div>
       ))}
+      {!filteredTodos.length && (
+        <div className="filter-label">No more todos here</div>
+      )}
     </>
   );
 }

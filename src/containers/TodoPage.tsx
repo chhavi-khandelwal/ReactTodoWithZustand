@@ -19,7 +19,7 @@ export default function TodoPage() {
 
   return (
     <div className="todo-page-container md:pt-30">
-      <div className="todo-heading">TODO List</div>
+      <h3 className="todo-heading">TODO List</h3>
       <Filters
         setFilteredTodos={setFilteredTodos}
         currentFilter={currentFilter}
