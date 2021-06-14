@@ -1,0 +1,75 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+html,
+body,
+#root {
+  @apply p-0 m-0 h-full overflow-y-auto w-full;
+}
+
+.app-container {
+  @apply flex justify-center items-center bg-gradient-to-b from-gray-50 to-gray-100 h-full overflow-y-auto;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.flex-items-start {
+  @apply flex justify-between items-start;
+}
+
+.todo-input {
+  @apply h-48 md:w-500 w-280 rounded-2xl border p-10 mr-2 placeholder-gray-300 text-gray-700;
+}
+
+.todo-item {
+  @apply flex-between bg-white rounded-full md:p-10 md:pl-20 md:pr-10 p-5 mb-10 pl-20 pr-10 relative  shadow-lg md:w-500 w-300;
+}
+
+.todo-content {
+  @apply md:text-24 text-16 truncate md:w-440 w-250;
+}
+
+.todo-active {
+  @apply md:w-30 md:h-30 w-20 h-20 ml-10  overflow-hidden  rounded-full bg-white cursor-pointer flex-center;
+}
+
+.todo-remove-btn {
+  @apply cursor-pointer flex-center  w-20 h-20 rounded-full overflow-hidden absolute -top-5 -right-5;
+}
+
+* {
+  @apply box-border;
+}
+
+.todo-page-container {
+  @apply flex-start flex-col h-full p-20 w-full overflow-y-auto;
+}
+
+.todo-heading {
+  @apply text-3xl font-semibold mb-20;
+}
+
+.error-container {
+  @apply text-10 text-red-500 absolute left-10 -bottom-15;
+}
+
+.filter-label {
+  @apply text-xl font-semibold mr-10;
+}
+
+.filter-container {
+  @apply flex justify-center items-center mb-30;
+}

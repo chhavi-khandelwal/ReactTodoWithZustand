@@ -1,12 +1,9 @@
-import React from "react";
-import logo from "./logo.svg";
+import TodoPage from './containers/TodoPage';
 
 function App() {
   return (
-    <div>
-      <header>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+    <div className="app-container">
+      <TodoPage />
     </div>
   );
 }
